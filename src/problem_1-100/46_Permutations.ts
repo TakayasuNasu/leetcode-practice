@@ -7,11 +7,22 @@
  * return all the possible permutations. You can return the answer in any order.
  */
 export function permute(nums: number[]): number[][] {
-  return [[1]]
-}
+  const result: number[][] = []
+  if (nums.length === 0) return result
 
-function helper(input: number[]) {
-  if (input.length == 0) {
-    return
+  function backTrack(current: number[], rest: number[]): void {
+    if (rest.length === 0) {
+      result.push(current)
+      return
+    }
+    for (let i = 0; i < rest.length; i++) {
+      backTrack(
+        [...current, rest[i]],
+        [...rest.slice(0, i), ...rest.slice(i + 1)]
+      )
+    }
   }
+
+  backTrack([], nums)
+  return result
 }
