@@ -1,4 +1,4 @@
-import { minOperations } from './CrawlerLogFolder'
+import { minOperations } from './1598_CrawlerLogFolder'
 
 test('0 test', () => {
   expect(minOperations(['../', './', '../'])).toBe(0)
