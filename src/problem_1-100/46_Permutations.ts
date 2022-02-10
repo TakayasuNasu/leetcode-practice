@@ -15,6 +15,7 @@ export function permute(nums: number[]): number[][] {
       result.push(current)
       return
     }
+
     for (let i = 0; i < rest.length; i++) {
       backTrack(
         [...current, rest[i]],
