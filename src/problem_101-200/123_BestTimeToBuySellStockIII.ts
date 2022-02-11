@@ -11,8 +11,9 @@
 
 export function maxProfit(prices: number[]): number {
   if (prices.length < 2) return 0
-  let leftMin = Number.MAX_SAFE_INTEGER
-  let rightMax = Number.MIN_SAFE_INTEGER
+
+  let lMin = Number.MAX_SAFE_INTEGER
+  let rMax = Number.MIN_SAFE_INTEGER
 
   let leftProfit = 0
   let rightProfit = 0
@@ -21,21 +22,16 @@ export function maxProfit(prices: number[]): number {
   const rightArray: number[] = new Array(prices.length)
 
   for (let i = 0; i < prices.length; i++) {
-    leftMin = Math.min(leftMin, prices[i])
-    leftProfit = Math.max(leftProfit, prices[i] - leftMin)
+    lMin = Math.min(lMin, prices[i])
+    leftProfit = Math.max(leftProfit, prices[i] - lMin)
     leftArray[i] = leftProfit
 
-    rightMax = Math.max(rightMax, prices[prices.length - 1 - i])
-    rightProfit = Math.max(
-      rightProfit,
-      rightMax - prices[prices.length - 1 - i]
-    )
+    rMax = Math.max(rMax, prices[prices.length - 1 - i])
+    rightProfit = Math.max(rightProfit, rMax - prices[prices.length - 1 - i])
     rightArray[prices.length - 1 - i] = rightProfit
   }
 
-  const mergedArray = leftArray.map((leftValue, i) => leftValue + rightArray[i])
-  console.log(leftArray)
-  console.log(rightArray)
+  const result = leftArray.map((leftValue, i) => leftValue + rightArray[i])
 
-  return Math.max(...mergedArray)
+  return Math.max(...result)
 }
