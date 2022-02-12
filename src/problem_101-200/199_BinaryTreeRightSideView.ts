@@ -23,5 +23,6 @@
 import { TreeNode } from '@/TreeNode'
 
 export function rightSideView(root: TreeNode | null): number[] {
+  console.log(root)
   return [1]
 }
