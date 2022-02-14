@@ -17,11 +17,11 @@ export const fromArrayToTree = (
   if (!root[0]) return null
   const v = root.shift() ?? undefined
   const l = root.shift() ?? null
-  const r = root.shift()
+  const r = root.shift() ?? null
   const i = Math.floor(root.length / 2)
   return new TreeNode(
     v,
     fromArrayToTree([l, ...root.slice(0, i)]),
-    fromArrayToTree(root.slice(i))
+    fromArrayToTree([r, ...root.slice(i)])
   )
 }
