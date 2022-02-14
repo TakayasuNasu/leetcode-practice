@@ -14,10 +14,14 @@ export const fromArrayToTree = (
   root: Array<number | null>
 ): TreeNode | null => {
   if (root.length == 0) return null
-  const midIdx = Math.floor(root.length / 2)
+  if (!root[0]) return null
+  const v = root.shift() ?? undefined
+  const l = root.shift() ?? null
+  const r = root.shift()
+  const i = Math.floor(root.length / 2)
   return new TreeNode(
-    root[0] || undefined,
-    fromArrayToTree(root.slice(0, midIdx)),
-    fromArrayToTree(root.slice(midIdx + 1))
+    v,
+    fromArrayToTree([l, ...root.slice(0, i)]),
+    fromArrayToTree(root.slice(i))
   )
 }
