@@ -23,6 +23,9 @@
 import { TreeNode } from '@/TreeNode'
 
 export function rightSideView(root: TreeNode | null): number[] {
-  console.log(root)
+  if (!root) return []
+  let queue = []
+  queue.push([0, root])
+
   return [1]
 }
