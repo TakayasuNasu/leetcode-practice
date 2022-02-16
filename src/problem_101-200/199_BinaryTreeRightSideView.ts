@@ -24,13 +24,27 @@ import { TreeNode } from '@/TreeNode'
 
 export function rightSideView(root: TreeNode | null): number[] {
   if (!root) return []
-  let queue = []
-  queue.push([0, root])
-  let levelObject = {}
+  const queue = [root]
+  let ans = [root.val]
 
   while (queue.length > 0) {
-    const [level, current] = queue.shift()!
+    let added = false
+    const count = queue.length
+    for (let i = 0; i < count; i++) {
+      const curr = queue.shift()
+      const val = curr?.right?.val ?? curr?.left?.val
+      if (val && !added) {
+        ans.push(val)
+        added = true
+      }
+      if (curr?.right) {
+        queue.push(curr.right)
+      }
+      if (curr?.left) {
+        queue.push(curr.left)
+      }
+    }
   }
 
-  return [1]
+  return ans
 }
