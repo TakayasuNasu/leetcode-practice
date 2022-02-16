@@ -26,6 +26,11 @@ export function rightSideView(root: TreeNode | null): number[] {
   if (!root) return []
   let queue = []
   queue.push([0, root])
+  let levelObject = {}
+
+  while (queue.length > 0) {
+    const [level, current] = queue.shift()!
+  }
 
   return [1]
 }
