@@ -15,4 +15,9 @@
  * Given the current state of the m x n grid board, return the next state.
  */
 
-export function gameOfLife(board: number[][]): void {}
+export function gameOfLife(board: number[][]): void {
+  const subArLength = board[0].length
+  for (let i = 0; i < board.length; i++) {
+    for (let j = 0; j < subArLength; j++) {}
+  }
+}
