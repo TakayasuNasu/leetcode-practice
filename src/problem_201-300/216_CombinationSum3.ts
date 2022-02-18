@@ -10,11 +10,6 @@
  */
 
 export function combinationSum3(k: number, n: number): number[][] {
-  if (k < n) return []
-  if (k == n) {
-    return [[...Array(k).keys()].map((v) => 1)]
-  }
-
   const nums = [...Array(9).keys()].map((i) => i + 1)
   const result: number[][] = []
 
@@ -24,7 +19,7 @@ export function combinationSum3(k: number, n: number): number[][] {
     index: number = 0
   ) => {
     if (sum == n && container.length == k) {
-      result.push(nums)
+      result.push(container)
     }
     if (sum < n && container.length < k) {
       for (let i = index; i < 9; i++) {
@@ -32,6 +27,8 @@ export function combinationSum3(k: number, n: number): number[][] {
       }
     }
   }
+
+  helper()
 
   return result
 }
