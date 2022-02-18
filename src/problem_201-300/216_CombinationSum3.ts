@@ -14,5 +14,24 @@ export function combinationSum3(k: number, n: number): number[][] {
   if (k == n) {
     return [[...Array(k).keys()].map((v) => 1)]
   }
-  return [[1]]
+
+  const nums = [...Array(9).keys()].map((i) => i + 1)
+  const result: number[][] = []
+
+  const helper = (
+    container: number[] = [],
+    sum: number = 0,
+    index: number = 0
+  ) => {
+    if (sum == n && container.length == k) {
+      result.push(nums)
+    }
+    if (sum < n && container.length < k) {
+      for (let i = index; i < 9; i++) {
+        helper([...container, nums[i]], sum + nums[i], i + 1)
+      }
+    }
+  }
+
+  return result
 }
