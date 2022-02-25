@@ -5,3 +5,9 @@ test('0 test', () => {
   const output = true
   expect(isValidSerialization(input)).toBe(output)
 })
+
+test('1 test', () => {
+  const input = '1,#'
+  const output = false
+  expect(isValidSerialization(input)).toBe(output)
+})
