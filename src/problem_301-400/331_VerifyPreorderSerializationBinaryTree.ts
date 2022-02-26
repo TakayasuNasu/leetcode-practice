@@ -21,11 +21,17 @@
 export function isValidSerialization(preorder: string): boolean {
   const nodes = preorder.split(',')
   let diff = 1
-  console.log(nodes)
+
   for (const node of nodes) {
-    diff -= diff
-    if (diff < 0) return false
-    if (node !== '#') diff += 2
+    if (diff > 0) {
+      if (node === '#') {
+        --diff
+      } else {
+        ++diff
+      }
+    } else {
+      return false
+    }
   }
-  return diff == 0
+  return diff < 1
 }
