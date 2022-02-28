@@ -8,5 +8,12 @@
  */
 
 export function intersection(nums1: number[], nums2: number[]): number[] {
-  return []
+  const set = new Set()
+  const res = new Set<number>()
+  nums1.forEach((num) => set.add(num))
+  nums2.forEach((num) => {
+    if (set.has(num)) res.add(num)
+  })
+
+  return [...res]
 }
