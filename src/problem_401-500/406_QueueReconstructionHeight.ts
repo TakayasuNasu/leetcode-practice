@@ -10,5 +10,19 @@
  */
 
 export function reconstructQueue(people: number[][]): number[][] {
-  return [[]]
+  const res = new Array<number[]>(people.length)
+  people.sort((a, b) => (a[0] !== b[0] ? a[0] - b[0] : a[1] - b[1]))
+
+  for (let i = 0; i < people.length; i++) {
+    let count = people[i][1]
+    for (let j = 0; j < res.length; j++) {
+      if (count === 0 && !res[j]) {
+        res[j] = people[i]
+        break
+      } else if (!res[j] || res[j][0] >= people[i][0]) {
+        count--
+      }
+    }
+  }
+  return res
 }
