@@ -19,3 +19,23 @@ test('0 test', () => {
   ]
   expect(reconstructQueue(people)).toStrictEqual(o)
 })
+
+test('1 test', () => {
+  const people = [
+    [6, 0],
+    [5, 0],
+    [4, 0],
+    [3, 2],
+    [2, 2],
+    [1, 4],
+  ]
+  const o = [
+    [4, 0],
+    [5, 0],
+    [2, 2],
+    [3, 2],
+    [1, 4],
+    [6, 0],
+  ]
+  expect(reconstructQueue(people)).toStrictEqual(o)
+})
