@@ -9,10 +9,24 @@
 
 export function frequencySort(s: string): string {
   const map = new Map<string, number>()
+  let max = 0
+
   Array(...s).forEach((s) => {
-    console.log(s)
+    const k = map.get(s) || 0
+    map.set(s, k + 1)
+    if (max < map.get(s)!) {
+      max = map.get(s)!
+    }
   })
+
   const sorted = new Map<number, string>()
+
+  for (const [key, value] of map) {
+    const n = sorted.get(value)
+    if (typeof n === 'number') {
+    }
+  }
+
   let result = ''
   return result
 }
