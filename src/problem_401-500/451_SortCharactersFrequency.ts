@@ -8,5 +8,11 @@
  */
 
 export function frequencySort(s: string): string {
-  return ''
+  const map = new Map<string, number>()
+  Array(...s).forEach((s) => {
+    console.log(s)
+  })
+  const sorted = new Map<number, string>()
+  let result = ''
+  return result
 }
