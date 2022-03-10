@@ -21,12 +21,25 @@ export function frequencySort(s: string): string {
 
   const sorted = new Map<number, string>()
 
-  for (const [key, value] of map) {
-    const n = sorted.get(value)
-    if (typeof n === 'number') {
+  for (const [s, num] of map) {
+    const n = sorted.get(num)
+    if (typeof n === 'string') {
+      sorted.set(num, n + helper(num, s))
+    } else {
+      sorted.set(num, helper(num, s))
     }
   }
 
   let result = ''
+
+  for (const [, s] of sorted) {
+    result = s + result
+  }
+
   return result
+}
+
+function helper(length: number, c: string) {
+  const s = Array(length).fill(c).join('')
+  return s
 }
