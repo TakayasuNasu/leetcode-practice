@@ -19,20 +19,20 @@ export function frequencySort(s: string): string {
     }
   })
 
-  console.log(map)
-
-  const sorted = new Map<number, string>()
+  const items = new Map<number, string>()
 
   for (const [s, num] of map) {
-    const n = sorted.get(num)
+    const n = items.get(num)
     if (typeof n === 'string') {
-      sorted.set(num, n + helper(num, s))
+      items.set(num, n + helper(num, s))
     } else {
-      sorted.set(num, helper(num, s))
+      items.set(num, helper(num, s))
     }
   }
 
   let result = ''
+
+  const sorted = new Map([...items.entries()].sort((a, b) => a[0] - b[0]))
 
   for (const [, s] of sorted) {
     result = s + result
