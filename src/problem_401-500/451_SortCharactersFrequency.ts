@@ -19,6 +19,8 @@ export function frequencySort(s: string): string {
     }
   })
 
+  console.log(map)
+
   const sorted = new Map<number, string>()
 
   for (const [s, num] of map) {
