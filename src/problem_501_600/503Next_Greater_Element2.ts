@@ -10,13 +10,18 @@
  */
 
 export function nextGreaterElements(nums: number[]): number[] {
-  const result: number[] = []
+  let result: number[] = Array(nums.length).fill(-1)
+  let stack: number[] = []
 
-  for (let count = 0; count < 2; count++) {
-    for (let i = 0; i < nums.length; i++) {
-      if (count == 0) {
-      }
+  for (let i = 0; i < nums.length * 2; i++) {
+    let j = i % nums.length
+
+    while (stack.length > 0 && nums[stack[stack.length - 1]] < nums[j]) {
+      result[stack.pop()!] = nums[j]
     }
+
+    stack.push(j)
   }
+
   return result
 }
