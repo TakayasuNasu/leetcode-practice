@@ -18,5 +18,8 @@ export function findFrequentTreeSum(root: TreeNode | null): number[] {
 }
 
 function helper(node: TreeNode, map: Map<number, number>): number {
-  return 1
+  const left = node.left == null ? 0 : helper(node.left, map)
+  const right = node.right == null ? 0 : helper(node.right, map)
+  const sum = left + right + node.val
+  return sum
 }
