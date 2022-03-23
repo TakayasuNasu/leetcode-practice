@@ -12,14 +12,18 @@ import { TreeNode } from '@/TreeNode'
 
 export function findFrequentTreeSum(root: TreeNode | null): number[] {
   if (!root) return [0]
+  let max = 0
   const map: Map<number, number> = new Map()
-  helper(root, map)
-  return []
-}
 
-function helper(node: TreeNode, map: Map<number, number>): number {
-  const left = node.left == null ? 0 : helper(node.left, map)
-  const right = node.right == null ? 0 : helper(node.right, map)
-  const sum = left + right + node.val
-  return sum
+  const helper = (node: TreeNode): number => {
+    const left = node.left == null ? 0 : helper(node.left)
+    const right = node.right == null ? 0 : helper(node.right)
+    const sum = left + right + node.val
+    const v = map.get(sum) || 0
+    map.set(sum, v + 1)
+    max = Math.max(max, map.get(sum)!)
+    return sum
+  }
+
+  return []
 }
