@@ -25,5 +25,11 @@ export function findFrequentTreeSum(root: TreeNode | null): number[] {
     return sum
   }
 
-  return []
+  const result: number[] = []
+
+  for (const [k, v] of map) {
+    if (v == max) result.push(k)
+  }
+
+  return result
 }
