@@ -4,5 +4,5 @@ import { findFrequentTreeSum } from './508_MostFrequentSubtreeSum'
 test('0 test', () => {
   const root = fromArrayToTree([5, 2, -3])
   const o = [2, -3, 4]
-  expect(findFrequentTreeSum(root)).toBe(o)
+  expect(findFrequentTreeSum(root)).toStrictEqual(o)
 })
