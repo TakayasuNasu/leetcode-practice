@@ -27,6 +27,13 @@ export function mergeTrees(
 
   if (root1 && root2) {
     mergedNode = new TreeNode(root1.val + root2.val)
+  } else if (root1) {
+    mergedNode = root1
+  } else if (root2) {
+    mergedNode = root2
   }
-  return null
+
+  mergedNode.left = mergeTrees(root1.left, root2.left)
+  mergedNode.right = mergeTrees(root1.right, root2.right)
+  return mergedNode
 }
