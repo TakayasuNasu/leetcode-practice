@@ -11,6 +11,6 @@ test('0 test', () => {
 test('1 test', () => {
   const root1 = fromArrayToTree([1])
   const root2 = fromArrayToTree([1, 2])
-  const o = fromArrayToTree([2, 7])
+  const o = fromArrayToTree([2, 2])
   expect(mergeTrees(root1, root2)).toStrictEqual(o)
 })
