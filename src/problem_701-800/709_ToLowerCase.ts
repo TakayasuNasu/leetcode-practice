@@ -5,5 +5,16 @@
  */
 
 export function toLowerCase(s: string): string {
-  return ''
+  let letter = ''
+
+  for (const c of [...s]) {
+    const letterCode = c.charCodeAt(0)
+    if (letterCode < 65 || letterCode > 90) {
+      letter += String.fromCharCode(letterCode)
+      continue
+    }
+    letter += String.fromCharCode(letterCode + 32)
+  }
+
+  return letter
 }
