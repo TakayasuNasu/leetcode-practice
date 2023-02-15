@@ -1,4 +1,4 @@
-import { nextGreaterElements } from './503Next_Greater_Element2'
+import { nextGreaterElements } from './503_Next_Greater_Element2'
 
 test('0 test', () => {
   const root = [1, 2, 1]
