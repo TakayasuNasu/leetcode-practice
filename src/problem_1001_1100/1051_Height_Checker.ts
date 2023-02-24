@@ -14,11 +14,6 @@
  * Return the number of indices where heights[i] != expected[i].
  */
 
-export function sortArrayByParity(nums: number[]): number[] {
-  for (let i: number = 0; i < nums.length; i++) {
-    if (nums[i] % 2 === 0) {
-      nums.unshift(...nums.splice(i, 1))
-    }
-  }
-  return nums
+export function heightChecker(heights: number[]): number {
+  return 1
 }
