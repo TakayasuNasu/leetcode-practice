@@ -14,6 +14,17 @@
  * Return the number of indices where heights[i] != expected[i].
  */
 
+import { quickSort } from '@/sort/quickSort'
+
 export function heightChecker(heights: number[]): number {
-  return 1
+  const sortedList = quickSort(heights)
+  let result = 0
+  if (heights.length != sortedList.length) return result
+
+  for (let i = 0; i < heights.length; i++) {
+    if (heights[i] != sortedList[i]) {
+      result += 1
+    }
+  }
+  return result
 }
