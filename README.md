@@ -32,3 +32,16 @@ yarn test src/problem_901*
 - keys with `undefined` properties are checked, e.g. `{a: undefined, b: 2}` will not equal `{b: 2}`;
   - undefined items are taken into account, e.g. `[2]` will not equal `[2, undefined]`;
 - array sparseness is checked, e.g. `[, 1]` will not equal `[undefined, 1]`;
+
+## Array.prototype.shift()
+
+`shift()` メソッドは 0 番目の位置の要素を取り除き、続く位置の値を小さい方向にずらします。そして、削除された値を返します。`length` プロパティが 0 の場合、`undefined` を返します
+
+```ts
+const names = ['Andrew', 'Edward', 'Paul', 'Chris', 'John']
+
+while (typeof (i = names.shift()) !== 'undefined') {
+  console.log(i)
+}
+// Andrew, Edward, Paul, Chris, John
+```
