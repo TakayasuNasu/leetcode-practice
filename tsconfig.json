@@ -18,7 +18,8 @@
     "jsx": "react-jsx",
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "types": ["vitest/globals"]
   },
   "include": ["src"],
   "extends": "./tsconfig.paths.json"
