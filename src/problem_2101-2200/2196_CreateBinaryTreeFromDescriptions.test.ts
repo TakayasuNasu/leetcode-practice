@@ -11,6 +11,16 @@ describe('createBinaryTree', () => {
       [80, 19, 1],
     ]
     const expected = fromArrayToTree([50, 20, 80, 15, 17, 19])
-    createBinaryTree(descriptions)
+    expect(createBinaryTree(descriptions)).toStrictEqual(expected)
+  })
+
+  test('descriptions = [[1,2,1],[2,3,0],[3,4,1]]', () => {
+    const descriptions = [
+      [1, 2, 1],
+      [2, 3, 0],
+      [3, 4, 1],
+    ]
+    const expected = fromArrayToTree([1, 2, null, null, 3, 4])
+    expect(createBinaryTree(descriptions)).toStrictEqual(expected)
   })
 })

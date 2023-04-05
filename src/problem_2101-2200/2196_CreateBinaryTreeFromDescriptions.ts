@@ -42,5 +42,7 @@ export function createBinaryTree(descriptions: number[][]): TreeNode | null {
 
   const rootKey = Number(rootKeys[0])
 
+  console.log(nodes[rootKey])
+
   return nodes[rootKey]
 }
