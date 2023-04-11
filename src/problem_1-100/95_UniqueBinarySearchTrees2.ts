@@ -16,9 +16,11 @@ export function generateTrees(n: number): Array<TreeNode | null> {
 const helper = (start: number, end: number): Array<TreeNode | null> => {
   if (start > end) return [null]
   let result: TreeNode[] = []
+
   for (let i = start; i <= end; i++) {
     let lefts = helper(start, i - 1)
     let rights = helper(i + 1, end)
+
     lefts.forEach((l) => {
       rights.forEach((r) => {
         result.push(new TreeNode(i, l, r))
