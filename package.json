@@ -7,11 +7,11 @@
     "test:ui": "vitest --ui"
   },
   "devDependencies": {
-    "@vitest/ui": "^0.29.8",
-    "prettier": "^2.8.7",
+    "@vitest/ui": "^0.31.0",
+    "prettier": "^2.8.8",
     "typescript": "^5.0.4",
-    "vite": "^4.2.1",
-    "vite-tsconfig-paths": "^4.0.8",
-    "vitest": "^0.29.8"
+    "vite": "^4.3.4",
+    "vite-tsconfig-paths": "^4.2.0",
+    "vitest": "^0.31.0"
   }
 }
