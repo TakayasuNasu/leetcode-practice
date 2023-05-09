@@ -2,6 +2,12 @@
   Leetcode Practice by TypeScript
 </h1>
 
+## Run Test
+
+```bash
+yarn test src/problem_901*
+```
+
 ## Word List
 
 ### queue
@@ -32,13 +38,7 @@ E=(v1,v2)
 
 ### BFS: (幅優先探索)
 
-## Run Test
-
-```bash
-yarn test src/problem_901*
-```
-
-### `.toStrictEqual(value)
+### `.toStrictEqual(value)`
 
 オブジェクトが同じ構造と型を持っていることをテストする
 
@@ -66,13 +66,13 @@ Point
 
 - `shift()`は破壊的メソッド。元の配列の中身を更新する
   - `const array1 = [1, 2, 3]; array1.shift()` => `array1`は`[2, 3]`
-- 先頭の要素を取り除く
+- **先頭**の要素を取り除く - 最後の要素を取得するのは`pop()`
 
 ---
 
 ## Array.prototype.pop()
 
-配列から最後の要素を取り除く
+配列から**最後**の要素を取り除く
 
 ```ts
 console.log(plants.pop())
@@ -85,6 +85,7 @@ console.log(plants)
 Point
 
 - `pop()`は破壊的メソッド。元の配列の中身を更新する
+- **最後**の要素 - 先頭の要素を取得するのは`shift()`
 
 ---
 
