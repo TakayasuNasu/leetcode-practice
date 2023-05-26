@@ -9,5 +9,17 @@
  */
 
 export function frequencySort(nums: number[]): number[] {
-  return [0]
+  const numberRecord: Record<number, number> = {}
+
+  nums.forEach((num) => {
+    numberRecord[num] = (numberRecord[num] || 0) + 1
+  })
+
+  const result = nums.sort((a, b) => {
+    return numberRecord[a] != numberRecord[b]
+      ? numberRecord[a] - numberRecord[b]
+      : b - a
+  })
+
+  return result
 }

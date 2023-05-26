@@ -136,6 +136,8 @@ Point
 - `start`が指定されなかった場合、`slice`は位置`0`から開始する
 - `end`が省略された場合、`slice`は列の最後`(arr.length)`までを取り出す
 
+---
+
 ## Inorder Traversal
 
 この探索では、まず左サブツリー、次にルート、そして最後に右サブツリーを訪れます
@@ -181,3 +183,19 @@ def postrderTraversal(root):
 
 - コードを最適化するための方法
 - webpack などでファイルをバンドルする際に、利用されていない不要なコードを除去してファイルを出力すること
+
+---
+
+## Record<Keys, Type>
+
+Point
+
+sample
+
+```ts
+const nodes: Record<number, number> = {}
+
+for (const item of list) {
+  nodes[item] += 1
+}
+```
