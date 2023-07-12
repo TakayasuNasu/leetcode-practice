@@ -9,6 +9,20 @@ describe('minimumTeachings', () => {
       [1, 3],
       [2, 3],
     ]
-    minimumTeachings(n, languages, friendships)
+    const expected = 1
+    expect(minimumTeachings(n, languages, friendships)).toBe(expected)
+  })
+
+  test('n = 3, languages = [[2],[1,3],[1,2],[3]], friendships = [[1,4],[1,2],[3,4],[2,3]]', () => {
+    const n = 3
+    const languages = [[2], [1, 3], [1, 2], [3]]
+    const friendships = [
+      [1, 4],
+      [1, 2],
+      [3, 4],
+      [2, 3],
+    ]
+    const expected = 2
+    expect(minimumTeachings(n, languages, friendships)).toBe(expected)
   })
 })
