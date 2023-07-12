@@ -28,4 +28,14 @@ function intersect(set1: Set<number>, set2: Set<number>): Set<number> {
 type Counter = {
   [index: number]: number
 }
+
+for (let f of dontspeak) {
+  for (let l of languages[f]) {
+    if (langcount[l]) {
+      langcount[l] += 1
+    } else {
+      langcount[l] = 1
+    }
+  }
+}
 ```
