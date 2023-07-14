@@ -14,8 +14,12 @@ let dontspeak = new Set<number>()
 
 ```ts
 for (let [u, v] of friendships) {
-  // ...
+  // friendshipsは必ず一対一なので両者を比較してコミュニケーションが取れるか検証する
+  u = u - 1
+  v = v - 1
+  if (intersect(lang[u], lang[v]).size !== 0) continue
 }
+
 // Helper function to find intersection of two sets
 function intersect(set1: Set<number>, set2: Set<number>): Set<number> {
   return new Set([...set1].filter((x) => set2.has(x)))
@@ -28,6 +32,8 @@ function intersect(set1: Set<number>, set2: Set<number>): Set<number> {
 type Counter = {
   [index: number]: number
 }
+
+let langcount: Counter = {}
 
 for (let f of dontspeak) {
   for (let l of languages[f]) {
