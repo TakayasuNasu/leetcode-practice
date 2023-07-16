@@ -14,10 +14,13 @@ let dontspeak = new Set<number>()
 
 ```ts
 for (let [u, v] of friendships) {
-  // friendshipsは必ず一対一なので両者を比較してコミュニケーションが取れるか検証する
   u = u - 1
   v = v - 1
+  // friendshipsは必ず一対一なので両者を比較してコミュニケーションが取れるか検証する
   if (intersect(lang[u], lang[v]).size !== 0) continue
+  // コミュニケーションが取れる場合はdontspeakに追加する
+  dontspeak.add(u)
+  dontspeak.add(v)
 }
 
 // Helper function to find intersection of two sets
