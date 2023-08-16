@@ -13,7 +13,11 @@ test('working sorting algorithm correctly', () => {
   output = [1, 2, 3, 4]
   expect(heapSort(input)).toStrictEqual(output)
 
-  input = [1, 2, 4, 3]
-  output = [1, 2, 3, 4]
+  input = [21, 20, 44, 23]
+  output = [20, 21, 23, 44]
+  expect(heapSort(input)).toStrictEqual(output)
+
+  input = [12, 88, 4, 53, 13]
+  output = [4, 12, 13, 53, 88]
   expect(heapSort(input)).toStrictEqual(output)
 })
