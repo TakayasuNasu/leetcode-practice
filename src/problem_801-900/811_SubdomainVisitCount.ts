@@ -1,3 +1,14 @@
+/**
+ * https://leetcode.com/problems/subdomain-visit-count/
+ *
+ * A website domain "discuss.leetcode.com" consists of various subdomains.
+ *
+ * Given an array of count-paired domains cpdomains,
+ * return an array of the count-paired domains of
+ * each subdomain in the input.
+ * You may return the answerin any order.
+ */
+
 export function subdomainVisits(cpdomains: string[]): string[] {
   const result: string[] = []
   const map = new Map<string, number>()
